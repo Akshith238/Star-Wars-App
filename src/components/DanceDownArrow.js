@@ -12,9 +12,9 @@ const DanceDownArrow = ({planetRef}) => {
     <motion.div
       animate={{ translateY: [0, -10, 0] }}
       transition={{ repeat: Infinity, duration: 1.8 }}
-      className="flex justify-center m-20"
+      className="flex justify-center mt-5 w-10"
     >
-      <IconButton className='bg-amber-500' onClick={scrollToPlanets}>
+      <IconButton className='bg-amber-500 w-8 h-8' onClick={scrollToPlanets}>
         <ArrowDownward />
       </IconButton>
     </motion.div>
