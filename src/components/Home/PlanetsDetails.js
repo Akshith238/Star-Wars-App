@@ -40,6 +40,7 @@ const PlanetsDetails = ({ planet }) => {
     <motion.div
       initial={{ opacity: 0, rotateY: 0 , y:60}}
       whileInView={{y:0}}
+      viewport={{once: true}}
       animate={{ opacity: 1, rotateY: isFlipped ? 360 : 0 }}
       exit={{ opacity: 0, rotateY: 0 }}
       transition={{ duration: 0.5 }}
