@@ -13,7 +13,7 @@ module.exports = {
   important:'#root',
   theme: {
       fontFamily: {
-        poppins: ["Poppins","Helvetica","Arial","sans-serif"],
+        "poppins": ["Poppins","Helvetica","Arial","sans-serif"],
       },
       extend: {
         colors:{
