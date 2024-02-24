@@ -1,20 +1,18 @@
-import React,{useState,useEffect,useRef}from 'react'
+import React,{useState,useEffect,forwardRef, useRef}from 'react'
 import PlanetsDetails from './PlanetsDetails'
 import { Button } from '@mui/material';
 import { motion } from 'framer-motion';
 
-const PlanetsFeed = () => {
+const PlanetsFeed = forwardRef((props,ref) => {
   const [planets,setPlanets]=useState([]);
   const [nextPage, setNextPage] = useState(null);
   const [previousPage, setPreviousPage] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const planetsRef = useRef(null);
-
-  useEffect(() => {
-    if (planetsRef.current) {
-      planetsRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  }, [currentPage]);
+  const topRef= useRef(null);
+  
+  useEffect(()=>{
+      topRef.current.scrollIntoView({behaviour: "smooth"});
+  },[currentPage]);
 
   useEffect(() => {
     fetchPlanets('https://swapi.dev/api/planets/');
@@ -70,8 +68,9 @@ const PlanetsFeed = () => {
   };
 
   return (
-    <div className='bg-black p-10 justify-center items-center flex flex-col gap-16'>
+    <div ref={ref} className='bg-black p-10 justify-center items-center flex flex-col gap-16'>
       <motion.div
+      ref={topRef}
       initial={{y:100}}
       whileInView={{y:0}}
       viewport={{once: true}}
@@ -115,6 +114,6 @@ const PlanetsFeed = () => {
       </div>
     </div>
   )
-}
+});
 
 export default PlanetsFeed
