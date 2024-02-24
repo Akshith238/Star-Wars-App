@@ -1,10 +1,20 @@
-import React,{useState,useEffect}from 'react'
+import React,{useState,useEffect,useRef}from 'react'
 import PlanetsDetails from './PlanetsDetails'
+import { Button } from '@mui/material';
+import { motion } from 'framer-motion';
 
 const PlanetsFeed = () => {
   const [planets,setPlanets]=useState([]);
   const [nextPage, setNextPage] = useState(null);
   const [previousPage, setPreviousPage] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const planetsRef = useRef(null);
+
+  useEffect(() => {
+    if (planetsRef.current) {
+      planetsRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [currentPage]);
 
   useEffect(() => {
     fetchPlanets('https://swapi.dev/api/planets/');
@@ -25,26 +35,84 @@ const PlanetsFeed = () => {
   const handleNextPage = () => {
     if (nextPage) {
       fetchPlanets(nextPage);
+      setCurrentPage(currentPage + 1);
     }
   };
 
   const handlePreviousPage = () => {
     if (previousPage) {
       fetchPlanets(previousPage);
+      setCurrentPage(currentPage - 1);
     }
   };
+
+  const handleDotClick = (index) => {
+    const url = `https://swapi.dev/api/planets/?page=${index}`;
+    fetchPlanets(url);
+    setCurrentPage(index)
+  };
+
+  const renderDots = () => {
+    const dots = [];
+    for (let i = 1; i <= 6; i++) {
+      const isCurrentPage = i === currentPage;
+      dots.push(
+        <motion.div
+          key={i}
+          className={`w-3 h-3 rounded-full ${isCurrentPage ? 'bg-white' : 'bg-gray-500'}`}
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 0.8 }}
+          onClick={() => handleDotClick(i)}
+        />
+      );
+    }
+    return dots;
+  };
+
   return (
-    <div className='bg-black p-20 justify-center flex flex-wrap gap-16'>
-      <h1>Star Wars Planets</h1>
+    <div className='bg-black p-10 justify-center items-center flex flex-col gap-16'>
+      <motion.div
+      initial={{y:100}}
+      whileInView={{y:0}}
+      viewport={{once: true}}
+      transition={{duration: 0.6, ease: "easeOut"}}
+      className='text-5xl bg-gradient-to-r from-amber-500 to-gray-500 bg-clip-text text-center text-transparent'>
+        Star Wars Planets
+      </motion.div>
+      <div className='flex sm:flex-row flex-col justify-center flex-wrap gap-16'>
         {planets.map((planet) => (
           <PlanetsDetails key={planet.url} planet={planet} />
         ))}
-      <button onClick={handlePreviousPage} disabled={!previousPage}>
-        Previous
-      </button>
-      <button onClick={handleNextPage} disabled={!nextPage}>
-        Next
-      </button>
+      </div>
+      <div className='flex gap-4 justify-center w-1/4 items-center'>
+          <motion.div
+          initial={{scale:1}}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          transition={{ duration: 0.7 ,ease:"easeOut"}}
+          >
+              <Button 
+                className={`text-black font-poppins rounded-xl shadow-2xl font-semibold ${previousPage ? "bg-amber-500" : ""}`} 
+                onClick={handlePreviousPage} 
+                disabled={!previousPage}
+              >
+                Previous
+              </Button>
+          </motion.div>
+          <div className='flex gap-2'>{renderDots()}</div>
+          <motion.div 
+          initial={{scale:1}}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}>
+              <Button 
+                className={`text-black rounded-xl font-poppins shadow-2xl font-semibold ${nextPage ? "bg-amber-500" : ""}`} 
+                onClick={handleNextPage} 
+                disabled={!nextPage}
+              >
+                Next
+              </Button>
+          </motion.div>
+      </div>
     </div>
   )
 }

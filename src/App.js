@@ -6,9 +6,11 @@ import Home from './components/Home/Home';
 function App() {
   return (
     <BrowserRouter>
+      <div className='App font-poppins'>
         <Routes>
           <Route exact path="/" Component={Home} />
         </Routes>
+      </div>
     </BrowserRouter>
   );
 }

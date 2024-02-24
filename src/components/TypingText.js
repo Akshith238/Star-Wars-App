@@ -18,7 +18,7 @@ const TypingText = ({ text }) => {
         animate="visible"
         variants={variants}
         transition={transition}
-        className="sm:text-7xl fixed-top text-5xl text-center object-cover sm:top-1/2 z-10 font-bold bg-gradient-to-r from-amber-500 to-yellow-100 text-transparent bg-clip-text"
+        className="sm:text-6xl fixed-top text-5xl text-center object-cover sm:top-1/2 z-10 font-bold bg-gradient-to-r from-amber-500 to-yellow-100 text-transparent bg-clip-text"
       >
 
         {text.split('').map((char, index) => (
