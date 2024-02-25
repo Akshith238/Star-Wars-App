@@ -28,12 +28,12 @@ const Hero = ({ planetRef }) => {
   return (
     <div className="bg-black mt-20">
       <div className="flex relative flex-col items-center justify-center gap-10">
-        <div>
+        <div className='video-player'>
           <VideoPLayer />
         </div>
-        <div className='flex w-2/3 absolute flex-col items-center sm:gap-4 gap-1'>
+        <div className='flex w-2/3 absolute flex-col items-center md:gap-4 gap-1'>
           <TypingText text="Welcome To The Universe of Star Wars" />
-          <Typography data-aos="fade-up" data-aos-duration="3000" className='sm:text-6xl text-lg bg-gradient-to-r from-amber-400 to-yellow-100 opacity-80 text-transparent bg-clip-text font-poppins font-bold'>
+          <Typography data-aos="fade-up" data-aos-duration="2000" className='md:text-5xl text-lg bg-gradient-to-r from-amber-400 to-yellow-100 opacity-80 text-transparent bg-clip-text font-poppins font-bold'>
             Explore More
           </Typography>
           <DanceDownArrow planetRef={planetRef} />

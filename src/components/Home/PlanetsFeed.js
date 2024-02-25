@@ -73,25 +73,24 @@ const PlanetsFeed = forwardRef((props,ref) => {
       ref={topRef}
       initial={{y:100}}
       whileInView={{y:0}}
-      viewport={{once: true}}
       transition={{duration: 0.6, ease: "easeOut"}}
       className='sm:text-5xl text-3xl bg-gradient-to-r from-amber-500 to-gray-500 bg-clip-text text-center font-bold text-transparent'>
         Star Wars Planets
       </motion.div>
-      <div className='flex sm:p-3 p-10 md:flex-row flex-col justify-center flex-wrap gap-16'>
+      <div className='flex sm:p-3 p-10 md:flex-row flex-col md:justify-center items-center flex-wrap gap-16'>
         {planets.map((planet) => (
           <PlanetsDetails key={planet.url} planet={planet} />
         ))}
       </div>
-      <div className='flex gap-4 justify-center w-1/4 items-center'>
+      <div className='flex gap-5 justify-center w-1/4 items-center'>
           <motion.div
           initial={{scale:1}}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          transition={{ duration: 0.7 ,ease:"easeOut"}}
           >
               <Button 
-                className={`text-black font-poppins rounded-xl shadow-2xl font-semibold ${previousPage ? "bg-amber-500" : ""}`} 
+                elevation={7}
+                className={`text-white font-poppins rounded-xl shadow-2xl font-semibold ${previousPage ? "bg-black" : "text-inherit"}`} 
                 onClick={handlePreviousPage} 
                 disabled={!previousPage}
               >
@@ -104,7 +103,8 @@ const PlanetsFeed = forwardRef((props,ref) => {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}>
               <Button 
-                className={`text-black rounded-xl font-poppins shadow-2xl font-semibold ${nextPage ? "bg-amber-500" : ""}`} 
+                elevation={7}
+                className={`text-white rounded-xl font-poppins shadow-2xl font-semibold ${nextPage ? "bg-black" : "text-inherit"}`} 
                 onClick={handleNextPage} 
                 disabled={!nextPage}
               >

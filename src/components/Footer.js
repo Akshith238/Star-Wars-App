@@ -8,7 +8,7 @@ const Footer = () => {
       initial={{ y: 20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, delay: 0.5 }}
-      className="bg-gray-900 text-white py-4"
+      className=" bg-gray-950 text-white py-4"
     >
       <Container maxWidth="lg" className="flex justify-center items-center">
         <Typography className='font-poppins'>&copy; {new Date().getFullYear()} Star Wars App By Akshith</Typography>

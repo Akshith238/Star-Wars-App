@@ -46,7 +46,7 @@ const PlanetsDetails = ({ planet }) => {
       transition={{ duration: 0.5 }}
       className='md:w-2/5 w-full h-full'
     >
-    <Card elevation={7} className="font-poppins  bg-gradient-to-r from-slate-900 to-cyan-900 text-white p-4 rounded-2xl shadow-xl">
+    <Card elevation={7} className="font-poppins bg-gradient-to-r from-slate-900 via-zinc-900 to-gray-900 text-white p-3 rounded-2xl shadow-xl">
       <AnimatePresence
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -59,7 +59,7 @@ const PlanetsDetails = ({ planet }) => {
             exit={{ opacity: 0 }}
           >
             <CardContent className="flex flex-col sm:text-start text-center gap-4">
-              <Typography className="text-4xl font-bold text-center bg-gradient-to-r from-amber-500 to-gray-400 bg-clip-text text-transparent font-poppins">
+              <Typography className="md:text-4xl text-2xl font-bold text-center bg-gradient-to-r from-amber-500 to-gray-400 bg-clip-text text-transparent font-poppins">
                 {planet.name}
               </Typography>
               <Typography className='font-poppins font-medium text-start flex gap-4'>
@@ -72,10 +72,10 @@ const PlanetsDetails = ({ planet }) => {
                 <div>Terrain:</div> 
                 <div>{planet.terrain}</div>
               </Typography>
-              <Typography className='font-poppins font-medium text-start flex gap-4'>
+              <Typography className='font-poppins font-medium text-start items-center flex gap-4'>
                 <People /> 
                 <div>Population:</div>
-                <div>{Number(planet.population).toLocaleString()}</div>
+                <div className='md:text-sm text-xs'>{Number(planet.population).toLocaleString()}</div>
               </Typography>
               <Typography className='font-poppins font-medium text-start flex gap-4'>
                 <AspectRatio /> 
@@ -102,7 +102,7 @@ const PlanetsDetails = ({ planet }) => {
                   variant="outlined"
                   color="inherit"
                   onClick={flipCard}
-                  className="text-white font-medium font-poppins w-1/2 p-2 shadow-xl rounded-xl bg-black border-black"
+                  className="text-white font-medium font-poppins w-1/2 p-2 text-xs md:text-sm shadow-xl rounded-xl bg-black border-black"
                 >
                   Tap to View Residents
                 </Button>
@@ -116,13 +116,13 @@ const PlanetsDetails = ({ planet }) => {
             animate={{ opacity: 1}}
             exit={{ opacity: 0 }}
           >
-            <CardContent className="flex flex-col gap-5">
+            <CardContent className="flex flex-col gap-3">
               <Typography className='font-poppins font-semibold text-3xl text-center bg-gradient-to-r from-gray-400 to-amber-400 bg-clip-text text-transparent'> 
                 Residents 
               </Typography>
-              <div className='flex justify-between items-center'>
+              <div className='flex justify-center items-center gap-2 m-1'>
                 <Button 
-                className="w-8 h-8 shadow-xl rounded-full" 
+                className="md:w-8 md:h-8 shadow-xl rounded-full" 
                 onClick={prevResident}
                 disabled={residentIndex === 0}
                 >
@@ -160,7 +160,7 @@ const PlanetsDetails = ({ planet }) => {
                   variant="outlined"
                   color="inherit"
                   onClick={flipCard}
-                  className="text-white font-poppins font-medium w-1/2 p-2 rounded-xl bg-black border-black"
+                  className="text-white font-poppins font-medium w-1/2 text-xs md:text-sm p-2 rounded-xl bg-black border-black"
                 >
                   Back To Planet Details
                 </Button>
