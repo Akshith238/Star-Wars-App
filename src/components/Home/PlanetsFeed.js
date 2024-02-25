@@ -78,7 +78,7 @@ const PlanetsFeed = forwardRef((props,ref) => {
       className='sm:text-5xl text-3xl bg-gradient-to-r from-amber-500 to-gray-500 bg-clip-text text-center font-bold text-transparent'>
         Star Wars Planets
       </motion.div>
-      <div className='flex sm:p-3 p-10 sm:flex-row flex-col justify-center flex-wrap gap-16'>
+      <div className='flex sm:p-3 p-10 md:flex-row flex-col justify-center flex-wrap gap-16'>
         {planets.map((planet) => (
           <PlanetsDetails key={planet.url} planet={planet} />
         ))}
