@@ -62,32 +62,32 @@ const PlanetsDetails = ({ planet }) => {
               <Typography className="text-4xl font-bold text-center bg-gradient-to-r from-amber-500 to-gray-400 bg-clip-text text-transparent font-poppins">
                 {planet.name}
               </Typography>
-              <Typography className='font-poppins text-start flex gap-4'>
+              <Typography className='font-poppins font-medium text-start flex gap-4'>
                 <WbSunny />
                 <div>Climate:</div> 
                 <div>{planet.climate}</div>
               </Typography>
-              <Typography className='font-poppins text-start flex gap-4'>
+              <Typography className='font-poppins font-medium text-start flex gap-4'>
                 <Terrain />
                 <div>Terrain:</div> 
                 <div>{planet.terrain}</div>
               </Typography>
-              <Typography className='font-poppins text-start flex gap-4'>
+              <Typography className='font-poppins font-medium text-start flex gap-4'>
                 <People /> 
                 <div>Population:</div>
                 <div>{Number(planet.population).toLocaleString()}</div>
               </Typography>
-              <Typography className='font-poppins text-start flex gap-4'>
+              <Typography className='font-poppins font-medium text-start flex gap-4'>
                 <AspectRatio /> 
                 <div>Diameter:</div> 
                 <div>{planet.diameter}</div>
               </Typography>
-              <Typography className='font-poppins text-start flex gap-4'>
+              <Typography className='font-poppins font-medium text-start flex gap-4'>
                 <AccessTime /> 
                 <div>Orbital Period:</div> 
                 <div>{planet.orbital_period}</div>
               </Typography>
-              <Typography className='font-poppins text-start flex gap-4'>
+              <Typography className='font-poppins font-medium text-start flex gap-4'>
                 <RotateRight /> 
                 <div>Rotation Period:</div> 
                 <div>{planet.rotation_period}</div>
@@ -102,7 +102,7 @@ const PlanetsDetails = ({ planet }) => {
                   variant="outlined"
                   color="inherit"
                   onClick={flipCard}
-                  className="text-white font-poppins w-1/2 p-2 shadow-xl rounded-xl bg-black border-black"
+                  className="text-white font-medium font-poppins w-1/2 p-2 shadow-xl rounded-xl bg-black border-black"
                 >
                   Tap to View Residents
                 </Button>
@@ -117,7 +117,7 @@ const PlanetsDetails = ({ planet }) => {
             exit={{ opacity: 0 }}
           >
             <CardContent className="flex flex-col gap-5">
-              <Typography className='font-poppins text-3xl text-center bg-gradient-to-r from-gray-400 to-amber-400 bg-clip-text text-transparent'> 
+              <Typography className='font-poppins font-semibold text-3xl text-center bg-gradient-to-r from-gray-400 to-amber-400 bg-clip-text text-transparent'> 
                 Residents 
               </Typography>
               <div className='flex justify-between items-center'>
@@ -140,7 +140,7 @@ const PlanetsDetails = ({ planet }) => {
                       <ResidentDetails residentsUrl={planet.residents[residentIndex]} />
                     </motion.div>
                   ) : (
-                    <Typography className='font-poppins'>No Residents Found</Typography>
+                    <Typography className='font-poppins font-medium'>No Residents Found</Typography>
                   )}
                 </div>
                 <Button 
@@ -160,7 +160,7 @@ const PlanetsDetails = ({ planet }) => {
                   variant="outlined"
                   color="inherit"
                   onClick={flipCard}
-                  className="text-white font-poppins w-1/2 p-2 rounded-xl bg-black border-black"
+                  className="text-white font-poppins font-medium w-1/2 p-2 rounded-xl bg-black border-black"
                 >
                   Back To Planet Details
                 </Button>

@@ -30,19 +30,19 @@ const ResidentDetails = ({ residentsUrl }) => {
     >
       {resident ? (
         <div className='flex flex-col gap-y-3'>
-          <Typography className='font-poppins text-sm text-start flex items-center gap-2'>
+          <Typography className='font-poppins font-medium text-sm text-start flex items-center gap-2'>
             <Person />
             <span className="ml-2">Name: {resident.name}</span>
           </Typography>
-          <Typography className='font-poppins text-sm text-start flex items-center gap-2'>
+          <Typography className='font-poppins font-medium text-sm text-start flex items-center gap-2'>
             <Height /> 
             <span className="ml-2">Height: {resident.height}</span>
           </Typography>
-          <Typography className='font-poppins text-sm text-start flex items-center gap-2'>
+          <Typography className='font-poppins font-medium text-sm text-start flex items-center gap-2'>
             <FitnessCenter /> 
             <span className="ml-2">Mass: {resident.mass}</span>
           </Typography>
-          <Typography className='font-poppins text-sm text-start flex items-center gap-2'>
+          <Typography className='font-poppins font-medium text-sm text-start flex items-center gap-2'>
             <Wc /> 
             <span className="ml-2">Gender: {resident.gender}</span>
           </Typography>
