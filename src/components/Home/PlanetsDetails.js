@@ -46,7 +46,7 @@ const PlanetsDetails = ({ planet }) => {
       transition={{ duration: 0.5 }}
       className='sm:w-2/5 w-full h-full'
     >
-    <Card elevation={7} className="font-poppins  bg-gradient-to-r from-slate-900 to-cyan-900 text-white p-2 rounded-2xl shadow-xl">
+    <Card elevation={7} className="font-poppins  bg-gradient-to-r from-slate-900 to-cyan-900 text-white p-4 rounded-2xl shadow-xl">
       <AnimatePresence
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}

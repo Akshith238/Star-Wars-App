@@ -17,7 +17,7 @@ const AboutSection = () => {
         viewport={{once:"true"}}
         className="flex justify-center"
        >
-        <img src="/images/star-wars-outlaws.jpg" alt="Tatooine" className="md:w-full md:h-full w-2/3 h-2/3 rounded-lg" />
+        <img src="/images/star-wars-outlaws.jpg" alt="Tatooine" className="md:w-full md:h-full rounded-lg" />
       </motion.div>
       <Container>
         <motion.div
