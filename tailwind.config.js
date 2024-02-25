@@ -1,12 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  purge: {
-    enabled: true,
-    content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
-    options: {
-      safelist: ['font-poppins'],
-    },
-  },
   content: [
       "./src/**/*.{js,jsx,ts,tsx}",
   ],

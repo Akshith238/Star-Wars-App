@@ -8,7 +8,7 @@ const AboutSection = () => {
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1.5}}
-      className="flex sm:flex-row flex-col bg-black font-poppins text-white py-20 px-14 gap-10"
+      className="flex md:flex-row flex-col bg-black font-poppins text-white py-20 px-14 gap-10"
     >
       <motion.div 
         initial={{opacity:0, x:-100}}
@@ -17,7 +17,7 @@ const AboutSection = () => {
         viewport={{once:"true"}}
         className="flex justify-center"
        >
-        <img src="/images/star-wars-outlaws.jpg" alt="Tatooine" className="w-full h-full rounded-lg" />
+        <img src="/images/star-wars-outlaws.jpg" alt="Tatooine" className="md:w-full md:h-full w-2/3 h-2/3 rounded-lg" />
       </motion.div>
       <Container>
         <motion.div
