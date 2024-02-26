@@ -90,7 +90,7 @@ const PlanetsFeed = forwardRef((props,ref) => {
           >
               <Button 
                 elevation={7}
-                className={`text-white font-poppins rounded-xl shadow-2xl font-semibold ${previousPage ? "bg-black" : "text-inherit"}`} 
+                className={`text-white font-poppins rounded-xl shadow-2xl font-semibold ${previousPage ? "bg-black" : "hidden"}`} 
                 onClick={handlePreviousPage} 
                 disabled={!previousPage}
               >
@@ -104,7 +104,7 @@ const PlanetsFeed = forwardRef((props,ref) => {
           whileTap={{ scale: 0.9 }}>
               <Button 
                 elevation={7}
-                className={`text-white rounded-xl font-poppins shadow-2xl font-semibold ${nextPage ? "bg-black" : "text-inherit"}`} 
+                className={`text-white rounded-xl font-poppins shadow-2xl font-semibold ${nextPage ? "bg-black" : "hidden"}`} 
                 onClick={handleNextPage} 
                 disabled={!nextPage}
               >

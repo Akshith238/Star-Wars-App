@@ -1,4 +1,4 @@
-import React ,{useRef} from 'react'
+import React ,{useRef,useEffect} from 'react'
 import Navbar from '../Navbar'
 import Hero from './Hero'
 import PlanetsFeed from './PlanetsFeed'
@@ -9,7 +9,9 @@ import Footer from '../Footer'
 
 const Home = () => {
   const planetRef=useRef(null);
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className='flex flex-col font-poppins justify-center'>
        <Navbar />
