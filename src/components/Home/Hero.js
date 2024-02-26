@@ -11,7 +11,7 @@ const Hero = ({ planetRef }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (!videoLoaded && window.scrollY > 100) {
+      if (!videoLoaded && window.scrollY > 150) {
         setVideoLoaded(true);
       }
     };
