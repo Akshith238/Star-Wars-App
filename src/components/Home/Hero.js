@@ -11,7 +11,7 @@ const Hero = ({ planetRef }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (!videoLoaded && window.scrollY > 150) {
+      if (!videoLoaded && window.scrollY > 100) {
         setVideoLoaded(true);
       }
     };
@@ -32,13 +32,7 @@ const Hero = ({ planetRef }) => {
        {videoLoaded ? 
         (
           <div className='video-player'>
-            <AnimatePresence
-              initial={{opacity:0}}
-              animate={{opacity:1}}
-              transition={{duration:1}}
-            >
                 <VideoPLayer />
-            </AnimatePresence>
           </div>
         ):(
           <div className='bg-black h-screen w-full'>
