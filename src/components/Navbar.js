@@ -10,7 +10,7 @@ const Navbar = () => {
 return (
   <div>
       <AppBar className="bg-black" position='fixed' elevation={3}>
-          <Toolbar className='flex gap-2 justify-center w-screen h-24'>
+          <Toolbar className='flex gap-2 justify-center w-screen h-24 max-w-full'>
               <motion.img
               src={"/images/Star_Wars_Logo.png"}
               alt="Logo"
